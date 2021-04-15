@@ -4,6 +4,9 @@ import java.util.LinkedList;
 
 //Number of blocks involved.
 int blockCount = 2;
+//Specify the parameters of blocks in any order, with {mass, x coordinate, x velocity}
+double[][] blockParams = new double[][]{new double[]{10000, 600, -70},new double[]{1, 300, 0}};
+
 //A helper counter for color depiction of blocks.
 int blockCounter = 0;
 //Number of possible initial block locations, must be
@@ -61,7 +64,7 @@ void setup()
   //Compute constant for mass-logrithmic conversion.
   mc = Math.exp(maxSideLength)/maxMass;
   //Initialize blocks;
-  initBlocks(new double[]{50, 600, -70},new double[]{1, 300, 0});
+  initBlocks(blockParams);
   //initBlocks();
   //initBlocks();
   frameRate(framerate);
